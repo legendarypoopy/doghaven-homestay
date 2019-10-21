@@ -1,0 +1,612 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr_primary: #8BCD2D;
+  /* --clr_accent: #4c4c4c; */
+  --clr_accent: #373D3F;
+  --clr_dark: black;
+  --clr_light: white;
+  --clr_shade: #F3F3F3;
+
+  --ff_title: 'Raleway', sans-serif;
+  --ff_serif: 'Open Sans', sans-serif;
+  /* --ff_title: 'Lato', sans-serif; */
+  /* --ff_title: 'Julius Sans One', sans-serif; */
+  /* --ff_title: 'Oswald', sans-serif; */
+  
+  --font_n: 1rem;
+  --font_s: 0.82rem;
+  --font_m: 1.3rem;
+  --font_l: 2.4rem;
+
+}
+
+/* => Standardized All Typograghy and Font size*/
+html{
+  /* box-sizing: ; */
+  font-family: var(--ff_serif);
+  color: var(--clr_accent);
+  font-size: var(--font_n);
+  /* font-weight: ; */
+}
+
+/* => Standardized All Typograghy and Font size*/
+h1 {
+  font-family: var(--ff_title);
+  font-size: var(--font_l);
+  line-height: var(--font_l);
+}
+h2 {
+  font-size: var(--font_m);
+}
+h3 {
+  /* font-family: var(--ff_title); */
+  font-size: var(--font_m);
+}
+p {
+  font-size: var(--font_n);
+}
+
+
+
+
+
+
+/* ==========================
+   START OF MOBILE MODE 
+   ========================== */
+
+/* MOBILE SECTION: NAVBAR */
+nav {
+  min-height: var(--font_n);
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  /* background: orange; */
+  font-weight: 500;
+  }
+nav #logo {
+  background-color: var(--clr_shade);
+  height: 100px;
+  background-image: url("IMG/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* Cannot use margin bc this is background image, so will have a space when i add background color behind
+  so have to use background-position-x to align the logo  */
+  background-position-x: 13%;
+  display: none;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(var(--font_m) * 1.7);
+  width: 100%;
+  display: none;
+}
+nav ul li {
+  background: var(--clr_shade);
+  list-style: none;
+  }
+nav ul li a {
+  color: var(--clr_accent);
+  text-shadow:
+		/* -1px -1px 0 rgba(255,255,255,0.5), */
+		1px -1px 0 rgba(255,255,255,0.5);
+		/* -1px 1px 0 rgba(255,255,255,0.5), */
+		/* 1px 1px 0 rgba(255,255,255,0.5); */
+  /* text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px white,0px 0px 10px white; */
+  display: block;
+  white-space: nowrap;
+  padding: 3% 6%;
+  text-decoration: none;
+  /* font-weight: 900; */
+}
+nav ul li a:hover {
+  color: var(--clr_primary);
+  background: rgba(255, 255, 255, 0.8);
+}
+/* This is to give extra white space at the top when toggle menu */
+nav ul li:first-child {
+  padding: 20% 0 0 0;
+}
+/* This is to give extra white space at the bottom to cover entire screen when toggle menu */
+nav ul li:last-child {
+  padding: 0 0 100% 0;
+}
+.menu_toggle {
+  position: absolute;
+  /* display: none; */
+  padding: 6px 11px;
+  background: var(--clr_light);
+  /* background: pink; */
+  color: var(--clr_accent);
+  font-size: var(--font_m);
+  top: 0;
+  right: 0;
+}
+
+
+/* MOBILE SECTION: INTRO */
+.intro {
+  width: 100%;
+  background: var(--clr_primary);
+}
+.intro h1 {
+  color: var(--clr_light);
+  padding: 14% 6% 3% 6%;
+}
+.intro p {
+  padding: 3% 6% 10% 6%;
+  color: var(--clr_light);
+}
+
+
+
+/* MOBILE SECTION: PETBOARDING (grid_container) */
+.petboarding_container {
+  display: grid;
+  /* Can change 1 to auto-fit and it will be responsive
+  18rem is the biggest it can go before the screen can't fit for small mobile devices */
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
+  grid-gap: var(--font_s);
+  padding: 12% 6%;
+}
+
+/* MOBILE SECTION: PETBOARDING HEADER box */
+.petboarding_header h1 {
+  /* padding: 0% 0 0% 0; */
+}
+
+/* MOBILE SECTION: PETBOARDING TEXT box */
+.petboarding_text p {
+  /* padding: 0% 0 0% 0; */
+}
+
+
+/* MOBILE SECTION: PETBOARDING CAROUSELL */
+.carousell_petboarding {
+  width: 100%;
+  height: 200px;
+  background: var(--clr_shade);
+  text-align: center;
+  align-content: center;
+}
+
+
+
+/* MOBILE SECTION: PETSITTING */
+.petsit {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+.overlay_DESKTOP {
+  /* Position absolute will make the overlay layer pop out but then text will be hidden behind (can't see) in this way. 
+  Therefore, the text need to position relative so they will be visible again */
+  position: absolute;
+  /* width of overylay */
+  width: 100%;
+  /* shift the overlay to top/bottom/left/right */
+  margin: 0 0% 0 0%;
+  /* Note: height is 100% in respect to intro height of 100vh */
+  height: 100%;
+  /* Darken the background image so that text are more readable */
+  background: rgba(0, 0, 0, 0.5);
+}
+.petsit .text {
+  width: 100%;
+  /* height: 100vh; */
+  /* float: left; */
+}
+
+.petsit .petsit_text h1 {
+  padding: 1% 6% 0 6%;
+  /* Position relative will make the text visible as there is an overlay above it */
+  position: relative;
+}
+.petsit .petsit_text h2 {
+  padding: 0.5% 6% 0% 6%;
+  /* Position relative will make the text visible as there is an overlay above it */
+  position: relative;
+}
+.petsit .petsit_text h3 {
+  padding: 8% 7% 0 60%;
+  /* Position relative will make the text visible as there is an overlay above it */
+  position: relative;
+}
+.petsit .petsit_text p {
+  padding: 2% 6% 0 6%;
+  /* Position relative will make the text visible as there is an overlay above it */
+  position: relative;
+  max-height: 200px;
+  overflow: hidden;
+}
+/* Button 4 style: White text and perimeter */
+.btn4 {
+  font-size: var(--font_n);
+  padding: 0 15px;
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid var(--clr_accent);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr_accent);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: .3s;
+
+/* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+  margin: 2.2% 10% 5% 6%;
+
+/* Below not required after i added padding to give equal left and right spacing regardless of text length */
+  /* width: 110px;
+  height: 25px; */
+}
+.btn4:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_accent);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn4:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_accent);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn4:hover {
+  color: var(--clr_light);
+  z-index: 1;
+}
+.btn4:hover:before {
+  top: 0;
+}
+
+.petsit_image_on_mobile {
+  height: 300px;
+  background-image: url("IMG/petsit_mobile.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Adjust image left/right */
+  /* background-position-x: 255%; */
+  /* Adjust image left/right/top/bottom */
+  background-position-y: top;
+}
+
+
+
+
+/* MOBILE SECTION: Footer  */
+footer {
+  width: 100%;
+  height: auto;
+  background: var(--clr_light);
+  /* color: var(--clr_accent); */
+  
+  /* IMPTT NOTE: Do NOT add padding here to make standardized top/bottom/left/right gap (in this div)! 
+  Else it will create a white line on the extreme right of phone due to the padding pushing on the right side. 
+  All paddings (to do in )top/bottom/left/right) to do in h1, h2, p  etc */
+}
+footer .info h1 {
+  padding: 10% 6% 0 6%;
+}
+footer .info h1 a {
+  color: var(--clr_accent);
+  text-decoration: none;
+}
+footer .info h1 a:hover {
+  color: var(--clr_primary);
+}
+.arrow {
+  display: none;
+}
+footer .info p {
+  /* Adjust only top and bottom. Left and right control in .recognition div */
+  padding: 1.5% 6% 0% 6%;
+  /* width: 88%; */
+}
+/* SPECIAL NOTE: For button gap adjustment (top/bottom/left/right), go to .btn3 -> Gap adjustment for button  */
+footer .copyright {
+  background: var(--clr_light);
+  color: var(--clr_accent);
+  display: flex;
+  justify-content: space-between;
+  /* NOTE: to adjust copyright text top and bottom gap here */
+  padding: 1% 6% 0% 6%;
+  align-items: center;
+}
+footer .copyright p {
+  font-size: var(--font_s);
+}
+/* Button 5 style (for Footer only): White text and perimeter */
+.btn5 {
+  font-size: var(--font_n);
+  padding: 0 15px;
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid var(--clr_accent);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr_accent);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: .3s;
+
+/* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+  margin: 2.2% 5% 10% 6%;
+
+/* Below not required after i added padding to give equal left and right spacing regardless of text length */
+  /* width: 110px;
+  height: 25px; */
+}
+.btn5:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn5:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn5:hover {
+  color: var(--clr_dark);
+  border: 1px solid var(--clr_primary);
+  z-index: 1;
+}
+.btn5:hover:before {
+  top: 0;
+}
+
+.social .icon1 {
+  font-size: calc(var(--font_n)*2);
+  color: var(--clr_accent);
+  /* NOTE: to adjust social icon top/bottom/left/right gap here */
+  padding: 0 10px 7% 0;
+}
+.social .icon1:hover {
+  color: var(--clr_primary);
+}
+.social .icon2 {
+  font-size: calc(var(--font_n)*2);
+  color: var(--clr_accent);
+  /* NOTE: to adjust social icon top/bottom/left/right gap here */
+  padding: 0 10px 7% 0;
+}
+.social .icon2:hover {
+  color: var(--clr_primary);
+}
+.social .icon3 {
+  font-size: calc(var(--font_n)*2);
+  color: var(--clr_accent);
+  padding:0 0 7% 0;
+}
+.social .icon3:hover {
+  color: var(--clr_primary);
+}
+
+
+
+
+/* ===========================
+   START OF TABLET (IPAD) MODE 
+   =========================== */
+
+@media only screen and (min-width: 768px) {
+
+  /* TABLET SECTION: NAVBAR */
+  nav {
+    /* z-index: 99; */
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+    min-height: var(--font_n);
+    font-weight: bold;
+    /* this backgroundcolor is not required as using JS to change the color when scrolling down */
+    /* background: var(--clr_light); */
+    /* backgrd color helps to differential what to adjust on */
+    /* background: tomato; */
+    /* opacity: 0.6; */
+    /* background: rgba(0, 0, 0, 0.4); */
+  
+    /* position: fixed; */
+    top: 0;
+    /* width: 100%; */
+    transition: top 0.7s;
+    /* overflow: hidden; */
+    /* padding: 0 6% 0 6%; */
+    /* padding: 90px 10px; */
+    /* height: 50px; */
+  }
+  nav #logo {
+    background-color: transparent;
+    /* height = 55px (3.4375rem) and width = 125px (7.8125rem) */
+    height: 55px;
+    width: 125px;
+    margin: 0 0 0 6%;
+    /* JSnavbarshrink: RMB TO TURN THIS TRANSITION ON IF USING THIS JAVASCRIPT  */
+    /* transition: 0.4s; */
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* width: 60%; */
+    /* adjust the full height of the nav text BOX height */
+    /* height: 55px; */
+    /* adjust the left and right gap of nav bar  */
+    margin: 0 4% 0 0;
+    /* display: inline-flex; */
+    font-size: var(--font_n);
+    /* width: 0; */
+  }
+  nav ul li {
+    background-color: transparent;
+    padding: 0;
+  }
+  nav ul li a {
+    /* text-decoration: none; */
+    /* color: var(--clr_accent); */
+    /* display: block; */
+    /* adjust how big the gap of the text should fit in the box */
+    padding: 17px 17px 17px 17px;
+    /* font-size: var(--font_n); */
+    /* white-spece: text will not jump to next line if no space for it */
+    /* white-space: nowrap; */
+    /* border-radius: 4px; */ 
+    /* background: pink; */
+  }
+  nav ul li:first-child {
+    padding: 0;
+  }
+  nav ul li:last-child {
+    padding: 0;
+  }
+  .menu_toggle {
+    display: none;
+  }
+
+
+  /* TABLET SECTION: INTRO */
+  .intro h1 {
+    padding: 14% 6% 3% 6%;
+  }
+  .intro p {
+    padding: 0% 6% 7% 6%;
+  }
+
+
+  /* TABLET SECTION: PETBOARDING (grid_container) */
+  .petboarding_container {
+    padding: 8% 6%;
+  }
+
+
+
+
+  .petsit_image {
+    /* Image position and size adjustment */
+    /* background-image: url("IMG/homestay.JPG"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* background-position: -600px; */
+    /* background-position-y: bottom; */
+    /* background-size: 70%; */
+    /* Adjust image left/right */
+    /* background-position-x: 70%; */
+    /* Adjust image left/right/top/bottom */
+    /* background-position: 400px 100px; */
+  background: url(img/petsit.jpg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* if you want to center the video no matter how you resize, change the top and left to 50%, and transform: translate(-50%, -50%)  
+  else, set top and left as 0, remove the transform*/
+  /* transform: translate(-50%, -50%) */
+  /* filter to enahnce the video color */
+  /* -webkit-filter: contrast(120%);filter: contrast(130%); */
+  }
+
+
+
+
+
+
+
+  /* TABLET SECTION: FOOTER */
+  footer .info p {
+    /* Adjust only top and bottom. Left and right control in .recognition div */
+    padding: 1.5% 36% 0% 6%;
+  }
+
+}
+
+/* =====================
+   START OF DESKTOP MODE 
+   ===================== */
+
+@media only screen and (min-width: 1025px) {
+  
+  nav ul {
+    margin: 0 4.7% 0 0;
+  }
+  nav ul li a {
+    padding: 17px 20px 17px 20px;
+  }
+
+  
+  /* DESKTOP SECTION: INTRO */
+  .intro h1 {
+    padding: 8% 6% 1% 6%;
+    text-align: center;
+  }
+  .intro p {
+    padding: 0% 6% 6% 6%;
+    text-align: center;
+  }
+
+
+  /*DESKTOP SECTION: PETBOARDING (grid_container) */
+  .petboarding_container {
+    padding: 6% 6%;
+  }
+
+
+
+
+  /* DESKTOP SECTION: FOOTER */  
+  footer .info h1  {
+    padding: 5% 6% 0 6%;
+  }
+  footer .info p {
+    padding: 0.5% 61% 0% 6%;
+  }
+  .btn5 {
+  /* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+    margin: 1% 5% 5% 6%;
+
+  }
+
+}
