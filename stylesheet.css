@@ -182,16 +182,25 @@ nav ul li:last-child {
 
 /* MOBILE SECTION: PETSITTING */
 .petsit {
-  width: 100%;
-  height: 650px;
+  /* width: 100%; */
+  /* height: 650px; */
   position: relative;
   overflow: hidden;
+  padding: 12% 0%;
+}
+.petsit_box h1 {
+  padding: 0% 6% 0% 6%;
+}
+.petsit_box h2 {
+  padding: 6% 6% 1% 6%;
+}
+.petsit_box p {
+  padding: 0% 6% 6% 6%;
 }
 
 
 
-
-.overlay_DESKTOP {
+.overlay_FOR_DESKTOP {
   /* Position absolute will make the overlay layer pop out but then text will be hidden behind (can't see) in this way. 
   Therefore, the text need to position relative so they will be visible again */
   position: absolute;
