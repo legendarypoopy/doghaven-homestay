@@ -72,9 +72,9 @@ nav {
   font-weight: 500;
   }
 nav #logo {
-  background-color: var(--clr_primary);
+  background-color: var(--clr_shade);
   height: 100px;
-  background-image: url("IMG/try.png");
+  background-image: url("IMG/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   /* Cannot use margin bc this is background image, so will have a space when i add background color behind
