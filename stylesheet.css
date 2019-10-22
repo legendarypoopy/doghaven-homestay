@@ -168,6 +168,112 @@ nav ul li:last-child {
   /* padding: 0% 0 0% 0; */
 }
 
+/* Button_Petboard 1 style */
+.btn_petboard1 {
+  font-size: var(--font_n);
+  padding: 0 15px;
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid var(--clr_accent);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr_accent);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: .3s;
+
+/* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+  margin: 6% 10% 0% 0%;
+
+/* Below not required after i added padding to give equal left and right spacing regardless of text length */
+  /* width: 110px;
+  height: 25px; */
+}
+.btn_petboard1:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn_petboard1:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn_petboard1:hover {
+  color: var(--clr_accent);
+  border: 1px solid var(--clr_primary);
+  z-index: 1;
+}
+.btn_petboard1:hover:before {
+  top: 0;
+}
+/* Button_Petboard 2 style */
+.btn_petboard2 {
+  font-size: var(--font_n);
+  padding: 0 15px;
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid var(--clr_accent);
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr_accent);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: .3s;
+
+/* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+  margin: 6% 10% 0% 0%;
+
+/* Below not required after i added padding to give equal left and right spacing regardless of text length */
+  /* width: 110px;
+  height: 25px; */
+}
+.btn_petboard2:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn_petboard2:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--clr_primary);
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  transition: .3s;
+}
+.btn_petboard2:hover {
+  color: var(--clr_accent);
+  border: 1px solid var(--clr_primary);
+  z-index: 1;
+}
+.btn_petboard2:hover:before {
+  top: 0;
+}
 
 /* MOBILE SECTION: PETBOARDING CAROUSELL */
 .carousell_petboarding {
@@ -198,50 +304,8 @@ nav ul li:last-child {
 }
 
 
-
-.overlay_FOR_DESKTOP {
-  /* Position absolute will make the overlay layer pop out but then text will be hidden behind (can't see) in this way. 
-  Therefore, the text need to position relative so they will be visible again */
-  position: absolute;
-  /* width of overylay */
-  width: 100%;
-  /* shift the overlay to top/bottom/left/right */
-  margin: 0 0% 0 0%;
-  /* Note: height is 100% in respect to intro height of 100vh */
-  height: 100%;
-  /* Darken the background image so that text are more readable */
-  background: rgba(0, 0, 0, 0.5);
-}
-.petsit .text {
-  width: 100%;
-  /* height: 100vh; */
-  /* float: left; */
-}
-
-.petsit .petsit_text h1 {
-  padding: 1% 6% 0 6%;
-  /* Position relative will make the text visible as there is an overlay above it */
-  position: relative;
-}
-.petsit .petsit_text h2 {
-  padding: 0.5% 6% 0% 6%;
-  /* Position relative will make the text visible as there is an overlay above it */
-  position: relative;
-}
-.petsit .petsit_text h3 {
-  padding: 8% 7% 0 60%;
-  /* Position relative will make the text visible as there is an overlay above it */
-  position: relative;
-}
-.petsit .petsit_text p {
-  padding: 2% 6% 0 6%;
-  /* Position relative will make the text visible as there is an overlay above it */
-  position: relative;
-  max-height: 200px;
-  overflow: hidden;
-}
-/* Button 4 style: White text and perimeter */
-.btn4 {
+/* MOBILE SECTION: Button_Petsit */
+.btn_petsit {
   font-size: var(--font_n);
   padding: 0 15px;
   border-radius: 30px;
@@ -257,39 +321,40 @@ nav ul li:last-child {
   transition: .3s;
 
 /* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
-  margin: 2.2% 10% 5% 6%;
+  margin: 0% 10% 10% 6%;
 
 /* Below not required after i added padding to give equal left and right spacing regardless of text length */
   /* width: 110px;
   height: 25px; */
 }
-.btn4:before {
+.btn_petsit:before {
   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
-  background: var(--clr_accent);
+  background: var(--clr_primary);
   top: -100%;
   left: 0;
   z-index: -1;
   transition: .3s;
 }
-.btn4:after {
+.btn_petsit:after {
   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
-  background: var(--clr_accent);
+  background: var(--clr_primary);
   top: -100%;
   left: 0;
   z-index: -1;
   transition: .3s;
 }
-.btn4:hover {
-  color: var(--clr_light);
+.btn_petsit:hover {
+  color: var(--clr_accent);
+  border: 1px solid var(--clr_primary);
   z-index: 1;
 }
-.btn4:hover:before {
+.btn_petsit:hover:before {
   top: 0;
 }
 
@@ -528,28 +593,39 @@ footer .copyright p {
     padding: 8% 6%;
   }
 
+  /* TABLET SECTION: PETSIT */
+  .petsit {
+    height: 800px;
+    position: relative;
+    background-color: var(--clr_primary);
+  }
 
+  /* TABLET SECTION: PETSIT OVERLAY */
+  .overlay {
+    /* Position absolute will make the overlay layer pop out but then text will be hidden behind (can't see) in this way. 
+    Therefore, the text need to position relative so they will be visible again */
+    position: absolute;
+    /* width of overylay */
+    width: 100%;
+    /* shift the overlay to top/bottom/left/right */
+    margin: 0 0% 0% 50%;
+    /* Note: height is 100% in respect to intro height of 100vh */
+    height: 100%;
+    /* Darken the background image so that text are more readable */
+    background: rgba(0, 0, 0, 0.7);
+  }
 
-
-  .petsit_image {
-    /* Image position and size adjustment */
-    /* background-image: url("IMG/homestay.JPG"); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* background-position: -600px; */
-    /* background-position-y: bottom; */
-    /* background-size: 70%; */
-    /* Adjust image left/right */
-    /* background-position-x: 70%; */
-    /* Adjust image left/right/top/bottom */
-    /* background-position: 400px 100px; */
+  /* TABLET SECTION: PETSIT IMAGE INSIDE BOX */
+  .petsit_box {
   background: url(img/petsit.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   min-width: 100%;
   min-height: 100%;
+  overflow: hidden;
   /* if you want to center the video no matter how you resize, change the top and left to 50%, and transform: translate(-50%, -50%)  
   else, set top and left as 0, remove the transform*/
   /* transform: translate(-50%, -50%) */
@@ -557,6 +633,47 @@ footer .copyright p {
   /* -webkit-filter: contrast(120%);filter: contrast(130%); */
   }
 
+  /* TABLET SECTION: PETSIT TEXT */
+  .petsit_box h1 {
+    color: var(--clr_light);
+    position: relative;
+    padding: 8% 6% 1% 55%;
+  }
+  .petsit_box h2 {
+    color: var(--clr_light);
+    position: relative;
+    padding: 2% 6% 1% 55%;
+  }  
+  .petsit_box p {
+    color: var(--clr_light);
+    position: relative;
+    padding: 0% 6% 1% 55%;
+  }
+
+  /* TABLET SECTION: Button_Petsit */
+  .btn_petsit {
+    border: 1px solid var(--clr_light);
+    color: var(--clr_light);
+  /* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
+    margin: 1% 10% 8% 55%;
+  }
+  .btn_petsit:before {
+    background: var(--clr_light);
+  }
+  .btn_petsit:after {
+    background: var(--clr_light);
+  }
+  .btn_petsit:hover {
+    color: var(--clr_accent);
+    border: 1px solid var(--clr_light);
+  }
+
+
+
+  /* TABLET SECTION: PETSIT IMAGE FOR MOBILE */
+  .petsit_image_on_mobile {
+    background-image: none;
+  }
 
 
 
@@ -602,6 +719,23 @@ footer .copyright p {
   }
 
 
+  /* DESKTOP SECTION: PETSIT */
+  .petsit {
+    height: 700px;
+  }
+
+  /* DESKTOP SECTION: PETSIT TEXT */
+
+  .petsit_box h1 {
+    padding: 5% 6% 0% 55%;
+  }
+  .petsit_box h2 {
+    padding: 1.5% 6% 1% 55%;
+  }  
+  .petsit_box p {
+    padding: 0% 6% 1% 55%;
+  }
+  
 
 
   /* DESKTOP SECTION: FOOTER */  
