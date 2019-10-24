@@ -617,7 +617,7 @@ footer .copyright p {
 
   /* TABLET SECTION: PETSIT IMAGE INSIDE BOX */
   .petsit_box {
-  background: url(img/petsit.jpg);
+  background: url("IMG/petsit.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
