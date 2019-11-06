@@ -10,6 +10,7 @@
   --clr_dark: black;
   --clr_light: white;
   --clr_shade: #F3F3F3;
+  --clr_logogreen: #8DC73F;
 
   --ff_title: 'Raleway', sans-serif;
   --ff_serif: 'Open Sans', sans-serif;
@@ -74,12 +75,11 @@ nav {
 nav #logo {
   background-color: var(--clr_shade);
   height: 100px;
+  width: 220px;
   background-image: url("IMG/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
-  /* Cannot use margin bc this is background image, so will have a space when i add background color behind
-  so have to use background-position-x to align the logo  */
-  background-position-x: 13%;
+  margin: 0% 0 0 6%;
   display: none;
 }
 nav ul {
@@ -95,21 +95,14 @@ nav ul li {
   }
 nav ul li a {
   color: var(--clr_accent);
-  text-shadow:
-		/* -1px -1px 0 rgba(255,255,255,0.5), */
-		1px -1px 0 rgba(255,255,255,0.5);
-		/* -1px 1px 0 rgba(255,255,255,0.5), */
-		/* 1px 1px 0 rgba(255,255,255,0.5); */
-  /* text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px white,0px 0px 10px white; */
   display: block;
   white-space: nowrap;
   padding: 3% 6%;
   text-decoration: none;
-  /* font-weight: 900; */
 }
 nav ul li a:hover {
-  color: var(--clr_primary);
-  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  background: var(--clr_shade);
 }
 /* This is to give extra white space at the top when toggle menu */
 nav ul li:first-child {
@@ -118,6 +111,13 @@ nav ul li:first-child {
 /* This is to give extra white space at the bottom to cover entire screen when toggle menu */
 nav ul li:last-child {
   padding: 0 0 100% 0;
+}
+.currentnav {
+  cursor: default;
+  border-left: 5px solid var(--clr_accent);
+}
+.currentnav:hover {
+  color: inherit;
 }
 .menu_toggle {
   position: absolute;
@@ -134,15 +134,24 @@ nav ul li:last-child {
 
 /* MOBILE SECTION: INTRO */
 .intro {
-  width: 100%;
-  background: var(--clr_primary);
+  background: var(--clr_logogreen);
+  position: relative;
 }
-.intro h1 {
+#logo_greenbg {
+  position: absolute;
+  height: 42px;
+  width: 100px;
+  background-image: url("IMG/logo_greenbg.JPG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0.5% 0 0 6%;
+}
+.intro_header {
   color: var(--clr_light);
-  padding: 14% 6% 3% 6%;
+  padding: 20% 6% 1% 6%;
 }
-.intro p {
-  padding: 3% 6% 10% 6%;
+.intro_body {
+  padding: 0% 6% 9% 6%;
   color: var(--clr_light);
 }
 
@@ -155,7 +164,7 @@ nav ul li:last-child {
   18rem is the biggest it can go before the screen can't fit for small mobile devices */
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
   grid-gap: var(--font_s);
-  padding: 12% 6%;
+  padding: 11% 6% 8% 6%;
 }
 
 /* MOBILE SECTION: PETBOARDING HEADER box */
@@ -278,10 +287,30 @@ nav ul li:last-child {
 /* MOBILE SECTION: PETBOARDING CAROUSELL */
 .carousell_petboarding {
   width: 100%;
-  height: 300px;
+  height: 250px;
   background: var(--clr_shade);
   text-align: center;
   align-content: center;
+}
+
+.holder {
+  background:#ccc;
+  padding:0.5rem;
+  overflow: hidden;
+}
+.news {
+  animation : slide 10s linear infinite;
+  
+}
+
+@keyframes slide {
+  0% {
+    transform: translatex(100%)
+  }
+
+  100% {
+    transform: translatex(0%)
+  }
 }
 
 
@@ -321,7 +350,7 @@ nav ul li:last-child {
   transition: .3s;
 
 /* Gap adjustment (top,left/right only, but not bottomn because that one is adjust fr intro div -> padding: top/bottom) for button */
-  margin: 0% 10% 10% 6%;
+  margin: 0% 10% 8% 6%;
 
 /* Below not required after i added padding to give equal left and right spacing regardless of text length */
   /* width: 110px;
@@ -574,17 +603,29 @@ footer .copyright p {
   nav ul li:last-child {
     padding: 0;
   }
+  .currentnav {
+    border-left: none;
+    text-decoration: overline;
+  }
+  .currentnav:hover {
+    background: transparent;
+  }
   .menu_toggle {
     display: none;
   }
 
 
   /* TABLET SECTION: INTRO */
-  .intro h1 {
-    padding: 14% 6% 3% 6%;
+  #logo_greenbg {
+    background-image: none;
   }
-  .intro p {
+  .intro_header {
+    padding: 14% 6% 0.5% 6%;
+    text-align: center;
+  }
+  .intro_body {
     padding: 0% 6% 7% 6%;
+    text-align: center;
   }
 
 
@@ -703,13 +744,11 @@ footer .copyright p {
 
   
   /* DESKTOP SECTION: INTRO */
-  .intro h1 {
-    padding: 8% 6% 1% 6%;
-    text-align: center;
+  .intro_header {
+    padding: 8% 6% 0.5% 6%;
   }
-  .intro p {
-    padding: 0% 6% 6% 6%;
-    text-align: center;
+  .intro_body {
+    padding: 0% 6% 5% 6%;
   }
 
 
